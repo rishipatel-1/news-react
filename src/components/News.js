@@ -23,7 +23,7 @@ static propTypes={
 
 
   async componentDidMount() {
-    let url = `https://newsapi.org/v2/top-headlines?country=us&category=${this.props.category}&apiKey=be2241793c6c49529c5b1da7e9232f02&page=1`;
+    let url = `https://newsapi.org/v2/top-headlines?country=in&category=${this.props.category}&apiKey=be2241793c6c49529c5b1da7e9232f02&page=1`;
     let data = await fetch(url)
     let parseData = await data.json();
     this.setState({
@@ -31,7 +31,7 @@ static propTypes={
     })
   }
   handleNext = async () => {
-    let url = `https://newsapi.org/v2/top-headlines?country=us&category=${this.props.category}&apiKey=be2241793c6c49529c5b1da7e9232f02&page=${this.state.page + 1}`;
+    let url = `https://newsapi.org/v2/top-headlines?country=in&category=${this.props.category}&apiKey=be2241793c6c49529c5b1da7e9232f02&page=${this.state.page + 1}`;
     let data = await fetch(url)
     let parseData = await data.json();
     this.setState({
@@ -43,7 +43,7 @@ static propTypes={
 
   }
   handlePrevious = async () => {
-    let url = `https://newsapi.org/v2/top-headlines?country=us&category=${this.props.category}&apiKey=be2241793c6c49529c5b1da7e9232f02&page=${this.state.page-1}`;
+    let url = `https://newsapi.org/v2/top-headlines?country=in&category=${this.props.category}&apiKey=be2241793c6c49529c5b1da7e9232f02&page=${this.state.page-1}`;
     let data = await fetch(url)
     let parseData = await data.json();
     this.setState({
@@ -59,11 +59,11 @@ static propTypes={
     return (
       <>
         <div className='container my-3'>
-          <h2 className='py-3'>News Headlines</h2>
+          <h1 className='py-3 text-center'>News Headlines</h1>
           <div className='row'>
             {this.state.articles.map((element) => {
               return <div className='col-md-4 py-2' key={element.url}>
-                <NewsItems title={element.title ? element.title.slice(0, 40) : ""}
+                <NewsItems title={element.title ? element.title.slice(0, 65) : ""}
                   description={element.description ? element.description.slice(0, 88) : ""}
                   imageUrl={element.urlToImage} url={element.url} author={element.author} date={element.publishedAt}
                 />
