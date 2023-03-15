@@ -8,7 +8,7 @@ class Navbar extends Component {
 
 
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
-          <div className="container-fluid">
+          <div className="container">
             <Link className="navbar-brand" to="/">NewsApp</Link>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon"></span>
@@ -25,10 +25,13 @@ class Navbar extends Component {
                   <Link  className="nav-link" to="/sports">sports</Link>
                 </li>
                 <li className="nav-item">
-                  <Link  className="nav-link" to="/technology">technology</Link>
+                  <Link  className="nav-link" to="/technology">Technology</Link>
                 </li>
                 <li className="nav-item">
-                  <Link  className="nav-link" to="/health">health</Link>
+                  <Link  className="nav-link" to="/health">Health</Link>
+                </li>
+                <li className="nav-item">
+                  <Link  className="nav-link" to="/business">Business</Link>
                 </li>
                 
               
